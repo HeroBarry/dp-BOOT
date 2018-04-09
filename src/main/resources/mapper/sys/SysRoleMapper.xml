@@ -32,12 +32,11 @@
 		FROM
 			sys_role r
 		<where>
-			<if test="userIdCreate != null">
-				and r.user_id_create = #{userIdCreate} 
-			</if>
+			1=1
 			<if test="roleName != null and roleName.trim() != ''">
 				AND r.role_name LIKE concat('%',#{roleName},'%') 
 			</if>
+			<if test="data_permission_sql != null and data_permission_sql != ''"> and  ${data_permission_sql} </if>
 		</where>
 		ORDER BY
 			r.role_id ASC

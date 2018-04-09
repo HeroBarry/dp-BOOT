@@ -28,7 +28,7 @@ function getGrid() {
 			{field : "mobile", title : "电话", width : "100px"}, 
 			{field : "contactAddress", title : "联系地址", width : "100px"},
             {field : "orgId", title : "部门id", width : "100px"},
-            {field : "userId", title : "用户id", width : "100px"},
+            {field : "userIdCreate", title : "创建者id", width : "100px"},
             {field : "remarks", title : "备注", width : "100px"},
 			{field : "operator", title : "操作人", width : "100px"}, 
 			{field : "createTime", title : "创建时间", width : "100px"}, 

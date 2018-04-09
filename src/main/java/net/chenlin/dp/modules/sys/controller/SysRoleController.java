@@ -2,6 +2,7 @@ package net.chenlin.dp.modules.sys.controller;
 
 import java.util.Map;
 
+import net.chenlin.dp.common.annotation.DataPermission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +36,7 @@ public class SysRoleController extends AbstractController {
 	 * @return
 	 */
 	@RequestMapping("/list")
+	@DataPermission
 	public Page<SysRoleEntity> list(@RequestBody Map<String, Object> params) {
 		if(getUserId() != SystemConstant.SUPER_ADMIN) {
 			params.put("userIdCreate", getUserId());

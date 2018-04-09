@@ -11,7 +11,7 @@
 			`mobile`, 
 			`contact_address`,
 			`org_id`,
-			`user_id`,
+			`user_id_create`,
 			`remarks`,
 			`operator`, 
 			`create_time`, 
@@ -20,7 +20,9 @@
 		FROM
 			b_visit
 		WHERE
-			1=1 ${data_permission_sql}
+			1=1
+		<if test="data_permission_sql != null and data_permission_sql != ''"> and  ${data_permission_sql} </if>
+
 		ORDER BY
 			id DESC
 	</select>
@@ -32,7 +34,7 @@
 			`mobile`, 
 			`contact_address`, 
 			`org_id`,
-			`user_id`,
+			`user_id_create`,
 			`remarks`, 
 			`operator`, 
 			`create_time`, 
@@ -45,7 +47,7 @@
 			#{mobile}, 
 			#{contactAddress}, 
 			#{orgId},
-			#{userId},
+			#{userIdCreate},
 			#{remarks}, 
 			#{operator}, 
 			#{createTime}, 
@@ -61,7 +63,8 @@
 			`content`, 
 			`mobile`, 
 			`contact_address`, 
-			`org_id`, 
+			`org_id`,
+			`user_id_create`,
 			`remarks`, 
 			`operator`, 
 			`create_time`, 
@@ -81,7 +84,7 @@
 			<if test="mobile != null">`mobile` = #{mobile}, </if>
 			<if test="contactAddress != null">`contact_address` = #{contactAddress}, </if>
 			<if test="orgId != null">`org_id` = #{orgId}, </if>
-			<if test="userId != null">`user_id` = #{userId}, </if>
+			<if test="userIdCreate != null">`user_id_create` = #{userIdCreate}, </if>
 			<if test="remarks != null">`remarks` = #{remarks}, </if>
 			<if test="operator != null">`operator` = #{operator}, </if>
 			<if test="createTime != null">`create_time` = #{createTime}, </if>

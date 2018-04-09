@@ -47,7 +47,7 @@ public class DataPermissionAspect {
             SysUserEntity user = ShiroUtils.getUserEntity();
             Long userOrgId = user.getOrgId();
             // 系统管理员不进行数据权限处理
-            if (user.getUserId() == SystemConstant.SUPER_ADMIN) {
+            if (user.getUserId() != SystemConstant.SUPER_ADMIN) {
                 MethodSignature signature = (MethodSignature) joinPoint.getSignature();
                 DataPermission dataPermission = signature.getMethod().getAnnotation(DataPermission.class);
 
@@ -71,10 +71,11 @@ public class DataPermissionAspect {
 
                 StringBuilder sqlBuilder = new StringBuilder();
                 sqlBuilder.append(" (");
+                sqlBuilder.append(" (");
                 sqlBuilder.append(tableAlias).append("org_id in(").append(StringUtils.join(orgIds,",")).append(")");
 
                 if (dataPermission.user()) {
-                    sqlBuilder.append(" or ").append(tableAlias).append("user_id=").append(user.getUserId());
+                    sqlBuilder.append(" or ").append(tableAlias).append("user_id_create=").append(user.getUserId());
                 }
                 sqlBuilder.append(")");
                 param.put(SystemConstant.DATA_PERMISSION, sqlBuilder.toString());

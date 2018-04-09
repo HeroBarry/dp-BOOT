@@ -24,14 +24,13 @@
 		FROM
 			sys_user u
 		<where>
-			<if test="userIdCreate != null">
-				AND u.user_id_create = #{userIdCreate} 
-			</if>
+			1=1
 			<if test="username != null and username.trim() != ''">
 				AND u.username LIKE concat('%',#{username},'%') 
 				OR u.email LIKE concat('%',#{username},'%') 
 				OR u.mobile LIKE concat('%',#{username},'%') 
 			</if>
+			<if test="data_permission_sql != null and data_permission_sql != ''"> and  ${data_permission_sql} </if>
 		</where>
 		ORDER BY 
 			u.user_id DESC

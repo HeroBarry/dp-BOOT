@@ -49,7 +49,7 @@ public class VisitEntity implements Serializable {
 	/**
 	 * 部门id
 	 */
-	private Long userId;
+	private Long userIdCreate;
 	
 	/**
 	 * 备注
@@ -129,12 +129,12 @@ public class VisitEntity implements Serializable {
 		return orgId;
 	}
 
-	public Long getUserId() {
-		return userId;
+	public Long getUserIdCreate() {
+		return userIdCreate;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUserIdCreate(Long userIdCreate) {
+		this.userIdCreate = userIdCreate;
 	}
 
 	public void setRemarks(String remarks) {

@@ -54,7 +54,7 @@ public class VisitController extends AbstractController {
 	@SysLog("新增来访登记")
 	@RequestMapping("/save")
 	public R save(@RequestBody VisitEntity visit) {
-		visit.setUserId(getUserId());
+		visit.setUserIdCreate(getUserId());
 		visit.setOrgId(getUser().getOrgId());
 		visit.setOperator(getUser().getUsername());
 		visit.setCreateTime(new Date());
