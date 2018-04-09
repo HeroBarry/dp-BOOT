@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="include/header_css::header('来访登记')"></head>
+<body>
+	<div id="dpLTE" class="container-fluid" v-cloak>
+		<table class="form" id="form">
+			<tr>
+	            <td class="formTitle">客户名字<font face="宋体">*</font></td>
+	            <td class="formValue">
+					<input type="text" class="form-control" placeholder="客户名字" v-model="visit.name" isvalid="yes" checkexpession="NotNull">
+	            </td>
+        	</tr>
+			<tr>
+	            <td class="formTitle">咨询内容<font face="宋体">*</font></td>
+	            <td class="formValue">
+					<input type="text" class="form-control" placeholder="咨询内容" v-model="visit.content" isvalid="yes" checkexpession="NotNull">
+	            </td>
+        	</tr>
+			<tr>
+	            <td class="formTitle">电话<font face="宋体">*</font></td>
+	            <td class="formValue">
+					<input type="text" class="form-control" placeholder="电话" v-model="visit.mobile" isvalid="yes" checkexpession="NotNull">
+	            </td>
+        	</tr>
+			<tr>
+	            <td class="formTitle">联系地址<font face="宋体">*</font></td>
+	            <td class="formValue">
+					<input type="text" class="form-control" placeholder="联系地址" v-model="visit.contactAddress" isvalid="yes" checkexpession="NotNull">
+	            </td>
+        	</tr>
+			<tr>
+	            <td class="formTitle">备注<font face="宋体">*</font></td>
+	            <td class="formValue">
+					<input type="text" class="form-control" placeholder="备注" v-model="visit.remarks" isvalid="yes" checkexpession="NotNull">
+	            </td>
+        	</tr>
+		</table>
+	</div>
+	<div th:include="include/footer_js::footer"></div>
+	<script th:src="@{/js/base/visit/add.js}"></script>
+</body>
+</html>
