@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>net.chenlin.dp</groupId>
-	<artifactId>dp</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>dp-BOOT</artifactId>
+	<version>1.0.0</version>
 	<packaging>jar</packaging><!-- clean package -->
 
-	<name>dp-lte-boot</name>
+	<name>dp-BOOT</name>
 	<description>dp-lte开发框架SpringBoot版本</description>
 
 	<parent>
