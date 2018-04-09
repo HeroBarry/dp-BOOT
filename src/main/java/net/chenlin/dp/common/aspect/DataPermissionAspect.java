@@ -46,6 +46,7 @@ public class DataPermissionAspect {
         if (param != null && param instanceof Map) {
             SysUserEntity user = ShiroUtils.getUserEntity();
             Long userOrgId = user.getOrgId();
+            //TODO 着这里封装多租户   获取多住户ID  带进语句中
             // 系统管理员不进行数据权限处理
             if (user.getUserId() != SystemConstant.SUPER_ADMIN) {
                 MethodSignature signature = (MethodSignature) joinPoint.getSignature();
@@ -70,7 +71,8 @@ public class DataPermissionAspect {
                 }
 
                 StringBuilder sqlBuilder = new StringBuilder();
-                sqlBuilder.append(" (");
+
+                //sqlBuilder.append(" (");
                 sqlBuilder.append(" (");
                 sqlBuilder.append(tableAlias).append("org_id in(").append(StringUtils.join(orgIds,",")).append(")");
 

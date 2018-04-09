@@ -85,11 +85,11 @@
 			<version>${mybatis-springboot-version}</version>
 		</dependency>
 		<!--https://github.com/liolay/mybatis-plugin-->
-		<dependency>
+<!--		<dependency>
 			<groupId>cn.ocoop.framework.mybatis.plugin</groupId>
 			<artifactId>mybatis-tenant-spring-boot-starter</artifactId>
 			<version>${tenant-version}</version>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
