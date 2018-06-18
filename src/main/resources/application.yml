@@ -48,13 +48,4 @@ spring:
 mybatis:
     mapperLocations: classpath:mapper/**/*.xml
     configLocation: classpath:mybatis.xml
-    #configuration-properties:
-      #这个配置是我们插件的，表示商户ID在数据库的列名
-      #tenantColumn : TENANT_ID
-      #这个配置是我们插件的，表示商户ID在数据库的数据类型，支持String/Number，正确的数据类型能够更好的使用索引
-      #tenantColumnType : Number
-      #这个配置是我们插件的，表示插件特定类型的sql是否启用
-      #tenantInsertEnabled : true
-      #tenantDeleteEnabled : true
-      #tenantUpdateEnabled : true
-      #tenantSelectEnabled : true
+
