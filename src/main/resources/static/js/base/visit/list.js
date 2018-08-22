@@ -16,7 +16,7 @@ function initialPage() {
 function getGrid() {
 	$('#dataGrid').bootstrapTableEx({
 		url: '../../visit/visit/list?_' + $.now(),
-		height: $(window).height()-56,
+		height: $(window).height()-100,
 		queryParams: function(params){
 			params.name = vm.keyword;
 			return params;
